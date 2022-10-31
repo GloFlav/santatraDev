@@ -1,0 +1,52 @@
+// create a user
+POST http://localhost:5000/users
+content-type: application/json
+
+{
+    "name": "flaviengloglo",
+    "email": "flavien@gmail.com",
+    "password": "123456",
+    "confpassword": "123456",
+    "role": "admin"
+}
+
+###
+// get all Users
+GET http://localhost:5000/users
+
+###
+//get single user
+GET http://localhost:5000/users/7ca1b5a7-5acd-489a-98fe-20a823dbb84f
+
+###
+//Update user
+PATCH http://localhost:5000/users/7ca1b5a7-5acd-489a-98fe-20a823dbb84f
+content-type: application/json
+
+{
+    "name": "John updated",
+    "email": "John@gmail.com",
+    "password": "",
+    "confpassword": "",
+    "role": "user"
+}
+
+###
+// delete user
+DELETE http://localhost:5000/users/7ca1b5a7-5acd-489a-98fe-20a823dbb84f
+
+###
+// Login User
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    "email": "flavien@gmail.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://localhost:5000/logout
